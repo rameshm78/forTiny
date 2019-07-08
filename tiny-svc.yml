@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tiny-svc
+  labels:
+    app: nethack
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+    nodePort: 30003
+  selector:
+    app: nethack

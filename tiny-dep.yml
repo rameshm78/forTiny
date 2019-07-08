@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tiny-dep
+spec:
+  replicas: 2
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: nethack
+    spec:
+      containers:
+      - name: game-pod
+        image: rameshm78/tdoc-rm-nethack:latest
+        ports:
+        - containerPort: 80
