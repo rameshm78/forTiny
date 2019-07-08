@@ -7,7 +7,7 @@ RUN \
   cd /root/nethack-3.6.2/sys/unix && ./setup.sh hints/linux && cd ../../ && make && make install && \
   rm -rf /root/nethack-3.6.2 && \
   echo 'OPTIONS=windowtype:curses,splash_screen,color,guicolor' >> /root/nh/install/games/lib/nethackdir/sysconf && \
-  echo "/usr/local/bin/ttyd -c ramesh:123 -p 80 '/root/nh/install/games/nethack'" > /root/start.sh
+  echo "/usr/local/bin/ttyd -c username:password -p 80 '/root/nh/install/games/nethack'" > /root/start.sh
 
 EXPOSE 80
 ENTRYPOINT ["/bin/bash"]
